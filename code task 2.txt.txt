@@ -1,0 +1,22 @@
+int motor = 7;
+int button = 9;
+int value;
+void setup()
+{
+   pinMode(button, INPUT);
+   pinMode(motor, OUTPUT);
+   Serial.begin(9600);
+}
+void loop()
+{
+  value = digitalRead(button);
+  if(value == HIGH)
+  {
+    digitalWrite(motor, HIGH);
+  }
+  else
+  {
+    digitalWrite(motor, LOW);
+    Serial.print(value);
+  }
+}
